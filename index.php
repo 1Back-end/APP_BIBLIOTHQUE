@@ -92,6 +92,14 @@
 
       <section id="livre">
       <div class="container">
+      <?php if (isset($_SESSION['alert'])): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <?php echo $_SESSION['alert']; ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php unset($_SESSION['alert']); ?> <!-- Efface le message après l'affichage -->
+      <?php endif; ?>
+
       <div class="row">
         <h1 class="text-center mb-5">Nos Dernières Publications</h1>
         <?php include("request.php"); ?>
@@ -104,12 +112,13 @@
                         <p class="text-muted fs--1"><?= htmlspecialchars($book['categorie_name']) ?> - <?= htmlspecialchars($book['first_name'] . " " . $book['last_name']) ?></p>
                         <p class="text-muted fs--1">ISBN : <?= htmlspecialchars($book['isbn']) ?></p>
                         <a href="<?php echo isset($_SESSION['user_uuid']) ? 'emprunter.php?id=' . htmlspecialchars($book['id']) : '#'; ?>" 
-                          class="btn btn-primary btn-sm" 
-                          <?php if (!isset($_SESSION['user_uuid'])) : ?> 
-                              data-bs-toggle="modal" data-bs-target="#loginModal" 
-                          <?php endif; ?>>
-                          Emprunter
-                        </a>
+                            class="btn btn-primary btn-sm" 
+                            <?php if (!isset($_SESSION['user_uuid'])) : ?> 
+                                data-bs-toggle="modal" data-bs-target="#loginModal" 
+                            <?php endif; ?>>
+                            Emprunter
+                          </a>
+
                         <a href="details.php?id=<?= htmlspecialchars($book['id']) ?>" class="btn btn-outline-secondary btn-sm">Détails</a>
                     </div>
                 </div>

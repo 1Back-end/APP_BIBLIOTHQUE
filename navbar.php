@@ -9,8 +9,8 @@ session_start(); // S'assurer que la session est démarrée
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link active" aria-current="page" href="index.php">Acceuil</a></li>
-              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="categories.php">Catégories</a></li>
-              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="auteurs.php">Auteurs</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="categories.php">A propos</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="auteurs.php">Contact</a></li>
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="livres.php">Livres</a></li>
               <?php if (isset($_SESSION['user_uuid']) && isset($_SESSION['user_name'])): ?>
                     <!-- Si l'utilisateur est connecté -->
@@ -19,6 +19,13 @@ session_start(); // S'assurer que la session est démarrée
                             Salut, <?= htmlspecialchars($_SESSION['user_name']); ?>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li>
+                            <a class="dropdown-item" href="dashboard.php">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a>
+                        </li>
+
+
                             <li>
                                 <a class="dropdown-item" href="users/logout.php">
                                     <i class="fas fa-sign-out-alt"></i> Déconnexion
