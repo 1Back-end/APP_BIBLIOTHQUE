@@ -54,6 +54,15 @@ function get_all_books($connexion) {
 
 $all_books = get_all_books($connexion);
 
+function get_books_by_category($connexion, $categorie_id) {
+    $requete = $connexion->prepare("SELECT titre FROM book WHERE categorie_id = :categorie_id ORDER BY created_at DESC");
+    $requete->bindParam(':categorie_id', $categorie_id, PDO::PARAM_INT);
+    $requete->execute();
+    return $requete->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$all_categories = get_all_categories($connexion);
+
 
 function get_years() {
     $current_year = date('Y'); // Année actuelle

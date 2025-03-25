@@ -9,8 +9,8 @@ session_start(); // S'assurer que la session est démarrée
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
               <li class="nav-item px-2"><a class="nav-link active" aria-current="page" href="index.php">Acceuil</a></li>
-              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="categories.php">A propos</a></li>
-              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="auteurs.php">Contact</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#">A propos</a></li>
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="categories.php">Catégories</a></li>
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="livres.php">Livres</a></li>
               <?php if (isset($_SESSION['user_uuid']) && isset($_SESSION['user_name'])): ?>
                     <!-- Si l'utilisateur est connecté -->
@@ -35,7 +35,7 @@ session_start(); // S'assurer que la session est démarrée
                     </div>
                 <?php else: ?>
                     <!-- Si l'utilisateur n'est pas connecté -->
-                    <a href="login/login.php" class="btn btn-primary py-2 px-4 shadow-none" data-bs-toggle="modal" data-bs-target="#loginModal">Mon compte</a>
+                    <a href="users/login.php" class="btn btn-primary py-2 px-4 shadow-none">Mon compte</a>
                 <?php endif; ?>
             </ul>
             <form class="d-flex my-3 d-block d-lg-none">

@@ -53,7 +53,7 @@
 
                         <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="dashboard.php">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
@@ -85,7 +85,7 @@
 
             <!-- Nav Item - Emprunts -->
             <li class="nav-item">
-                <a class="nav-link" href="emprunts.html">
+                <a class="nav-link" href="emprunts.php">
                     <i class="fas fa-hand-holding"></i>
                     <span>Emprunts</span>
                 </a>
@@ -101,7 +101,7 @@
 
             <!-- Nav Item - Utilisateurs -->
             <li class="nav-item">
-                <a class="nav-link" href="utilisateurs.html">
+                <a class="nav-link" href="utilisateurs.php">
                     <i class="fas fa-users"></i>
                     <span>Utilisateurs</span>
                 </a>
@@ -183,7 +183,7 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item text-decoration-none" href="../admin/profil.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
