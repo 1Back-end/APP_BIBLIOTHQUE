@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
         if ($user && password_verify($password, $user['password'])) {
             // Démarrer la session et stocker le nom de l'utilisateur
             $_SESSION['user_name'] = $user['username'];
+            $_SESSION['photo'] = $user['photo'];
             $_SESSION['user_uuid'] = $user['user_uuid'];
             
             // Redirection vers la page menu.php après connexion réussie

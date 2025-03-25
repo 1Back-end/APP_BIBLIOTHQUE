@@ -12,31 +12,40 @@ session_start(); // S'assurer que la session est démarrée
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#">A propos</a></li>
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="categories.php">Catégories</a></li>
               <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="livres.php">Livres</a></li>
-              <?php if (isset($_SESSION['user_uuid']) && isset($_SESSION['user_name'])): ?>
-                    <!-- Si l'utilisateur est connecté -->
-                    <div class="d-flex align-items-center">
-                        <button class="btn btn-primary dropdown-toggle py-2 px-4 shadow-none" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Salut, <?= htmlspecialchars($_SESSION['user_name']); ?>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li>
-                            <a class="dropdown-item" href="dashboard.php">
-                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                            </a>
-                        </li>
+              <?php 
+              // Vérifier si les variables de session existent
+              if (isset($_SESSION['user_uuid']) && isset($_SESSION['user_name'])) {
+                  // Création du token
+                  $token = base64_encode($_SESSION['user_uuid'] . ':' . $_SESSION['user_name']); // Encode les données
+              ?>
 
+                  <!-- Si l'utilisateur est connecté -->
+                  <div class="d-flex align-items-center">
+                      <button class="btn btn-primary dropdown-toggle py-2 px-4 shadow-none" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                          Salut, <?= htmlspecialchars($_SESSION['user_name']); ?>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                          <li>
+                              <a class="dropdown-item" href="users/menu.php?token=<?= urlencode($token); ?>">
+                                  <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                              </a>
+                          </li>
+                          <li>
+                              <a class="dropdown-item" href="users/logout.php">
+                                  <i class="fas fa-sign-out-alt me-2"></i> Déconnexion
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
 
-                            <li>
-                                <a class="dropdown-item" href="users/logout.php">
-                                    <i class="fas fa-sign-out-alt"></i> Déconnexion
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                <?php else: ?>
-                    <!-- Si l'utilisateur n'est pas connecté -->
-                    <a href="users/login.php" class="btn btn-primary py-2 px-4 shadow-none">Mon compte</a>
-                <?php endif; ?>
+              <?php 
+              } else { 
+              ?>
+                  <!-- Si l'utilisateur n'est pas connecté -->
+                  <a href="users/login.php" class="btn btn-primary py-2 px-4 shadow-none">Mon compte</a>
+              <?php 
+              } 
+              ?>
             </ul>
             <form class="d-flex my-3 d-block d-lg-none">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
