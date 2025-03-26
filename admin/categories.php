@@ -6,21 +6,20 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 mb-3">
                 <div class="card shadow-sm border-0 p-3">
-                    <form action="" method="post">
+                    <form action="" class="needs-validation" novalidate method="post">
                         <div class="mb-3">
                             <h6 class="text-uppercase fw-bold">Créer une catégorie</h6>
                         </div>
                         <div class="mb-3">
                             <label for="">Nom de la catégorie <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" required id="validationCustom03" class="form-control form-control-lg py-3 ps-3">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
+
                             
                             <?php include("process_add_categories.php")?>  
                             
-                            <?php if (!empty($erreur)) : ?>
-                                <div id="error-message" class="text-danger" role="alert">
-                                    <?= $erreur ?>
-                                </div>
-                            <?php endif; ?>
 
                             <?php if (!empty($success)) : ?>
                                 <div id="success-message" class="text-success" role="alert">
@@ -29,11 +28,8 @@
                             <?php endif; ?>
                         </div>
                         <div class="form-group">
-                                <button type="submit" name="submit" class="btn btn-primary py-3 ps-3 shadow-none text-white btn-responsive">
+                                <button type="submit" name="submit" class="btn btn-primary py-2 ps-3 shadow-none text-white btn-responsive">
                                     <i class="fas fa-plus-circle"></i> Créer
-                                </button>
-                                <button type="reset" class="btn btn-danger text-white py-3 ps-3 shadow-none btn-responsive">
-                                    <i class="fas fa-times-circle"></i> Annuler
                                 </button>
                             </div>
                     </form>

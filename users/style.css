@@ -10,3 +10,19 @@ body {
     -webkit-box-shadow: 0 0 28px rgba(0,0,0,.08);
     box-shadow: 0 0 28px rgba(0,0,0,.08);
 }
+.iti__country-list {
+    position: absolute;
+    z-index: 2;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    max-height: 200px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 385px;
+  }

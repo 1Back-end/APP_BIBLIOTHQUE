@@ -24,30 +24,45 @@
     </div>
     <div class="col-md-12 col-sm-12 mb-3">
         <div class="card shadow-sm p-3 border-0">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 mb-3">
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="nom" name="nom">
+                            <input type="text" required class="form-control form-control-lg" id="nom" name="nom">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="">Email <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control ps-2 py-3" id="email" name="email">
+                            <input type="email" class="form-control ps-2 py-3 form-control-lg" required id="email" name="email">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="">Nationalité <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control ps-2 py-3" id="nationalite" name="nationalite">
+                            <input type="text" class="form-control ps-2 py-3 form-control-lg" required id="nationalite" name="nationalite">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 mb-3">
                         <div class="mb-3">
                             <label for="prenom" class="form-label">Prénom <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control ps-2 py-3" id="prenom" name="prenom">
+                            <input type="text"  class="form-control ps-2 py-3 form-control-lg" required id="prenom" name="prenom">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="">Numéro de téléphone <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control ps-2 py-3" id="telephone" name="telephone">
+                            <input type="tel" class="form-control ps-2 py-3 form-control-lg" required id="telephone" name="telephone">
+                            <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="">Photo</label>

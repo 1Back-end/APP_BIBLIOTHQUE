@@ -16,10 +16,10 @@ if (isset($_POST['submit'])) {
     $isbn = $_POST['isbn'] ?? null;
     $description = $_POST['description'] ?? null;
 
-    // Vérifier si tous les champs sont remplis
-    if (empty($title) || empty($category) || empty($genre) || empty($price) || empty($author) || empty($year) || empty($isbn) || empty($description)) {
-        $erreur = "Tous les champs sont requis.";
-    }
+    // // Vérifier si tous les champs sont remplis
+    // if (empty($title) || empty($category) || empty($genre) || empty($price) || empty($author) || empty($year) || empty($isbn) || empty($description)) {
+    //     $erreur = "Tous les champs sont requis.";
+    // }
 
     // Gérer l'upload de l'image
     $image = $_FILES['image'] ?? null;

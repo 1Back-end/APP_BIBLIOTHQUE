@@ -28,14 +28,13 @@
 					<div class="card shadow-sm border-0">
 						<div class="card-body p-3">
 							<h1 class="fs-4 card-title fw-bold mb-4">Se connecter à son compte</h1>
-							<form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+							<form method="POST" class="needs-validation" novalidate>
 								<div class="mb-3">
 									<label class="mb-2" for="email">Adresse email</label>
-									<input id="email" type="email" class="form-control shadow-none py-2 " name="email">
-                                    <?php if(isset($erreur_champ) && empty($_POST['email'])): ?>
-                                        <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                                    <?php endif; ?>
-									
+									<input id="email" type="email" required class="form-control shadow-none py-2 form-control-lg" name="email">
+									<div class="invalid-feedback">
+										Ce champ est requis !
+									</div>
 								</div>
 
 								<div class="mb-3">
@@ -45,10 +44,10 @@
 											Mot de passe oublié ?
 										</a>
 									</div>
-									<input id="password" type="password" class="form-control shadow-none py-2" name="password">
-                                    <?php if(isset($erreur_champ) && empty($_POST['password'])): ?>
-                                        <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                                    <?php endif; ?>
+									<input id="password" type="password" class="form-control shadow-none py-2 form-control-lg" required name="password">
+                                    <div class="invalid-feedback">
+										Ce champ est requis !
+									</div>
 								    
 								</div>
 
@@ -65,7 +64,7 @@
 						</div>
 						<div class="card-footer py-3 border-0">
                         <div class="text-center">
-                            Vous n'avez pas de compte ? <a href="register.php" class="text-dark text-decoration-none">
+                            Vous n'avez pas de compte ? <a href="register.php" class="text-primary text-decoration-none">
                             Créez-en un
                             </a>
                         </div>
@@ -79,5 +78,6 @@
 	</section>
 
 	<script src="js/login.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ if (isset($_GET["id"])) {
     $autor = $query->fetch(PDO::FETCH_OBJ);
 }
 ?>
+
 <div class="container-fluid pb-5">
     <div class="col-md-12 col-sm-12 mb-3">
         <div class="card shadow-sm p-3 border-0">
@@ -35,24 +36,33 @@ if (isset($_GET["id"])) {
     </div>
     <div class="col-md-12 col-sm-12 mb-3">
     <div class="card shadow-sm p-3 border-0">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6 col-sm-12 mb-3">
                 <div class="mb-3">
                         <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
                         <input type="text" value="<?php echo htmlspecialchars($autor->last_name ?? ''); ?>" 
-                               class="form-control" id="nom" name="nom" required>
+                               class="form-control form-control-lg" id="nom" name="nom" required>
+                        <div class="invalid-feedback">
+                            Ce champ est requis !
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="prenom" class="form-label">Prénom <span class="text-danger">*</span></label>
                         <input type="text" value="<?php echo htmlspecialchars($autor->first_name ?? ''); ?>" 
-                               class="form-control" id="prenom" name="prenom" required>
+                               class="form-control form-control-lg" id="prenom" name="prenom" required>
+                               <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                     </div>
                     
                     <div class="mb-3">
                         <label for="nationalite" class="form-label">Nationalité <span class="text-danger">*</span></label>
                         <input type="text" value="<?php echo htmlspecialchars($autor->nationality ?? ''); ?>" 
-                               class="form-control ps-2 py-3" id="nationalite" name="nationalite" required>
+                               class="form-control ps-2 py-3 form-control-lg" id="nationalite" name="nationalite" required>
+                               <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                     </div>
                 </div>
 
@@ -60,12 +70,18 @@ if (isset($_GET["id"])) {
                 <div class="mb-3">
                         <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" value="<?php echo htmlspecialchars($autor->email ?? ''); ?>" 
-                               class="form-control ps-2 py-3" id="email" name="email" required>
+                               class="form-control ps-2 py-3 form-control-lg" id="email" name="email" required>
+                               <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="telephone" class="form-label">Numéro de téléphone <span class="text-danger">*</span></label>
                         <input type="tel" value="<?php echo htmlspecialchars($autor->phone_number ?? ''); ?>" 
-                               class="form-control ps-2 py-3" id="telephone" name="telephone" required>
+                               class="form-control ps-2 py-3 form-control-lg" id="telephone" name="telephone" required>
+                               <div class="invalid-feedback">
+                                Ce champ est requis !
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="photo" class="form-label">Photo</label>

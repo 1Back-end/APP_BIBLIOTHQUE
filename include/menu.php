@@ -218,6 +218,7 @@
     <!-- Page level custom scripts -->
     <script src="../assets-vendors/js/demo/chart-area-demo.js"></script>
     <script src="../assets-vendors/js/demo/chart-pie-demo.js"></script>
+    <script src="../assets-vendors/js/main.js"></script>
 
      <!-- Page level plugins -->
      <script src="../assets-vendors/vendor/datatables/jquery.dataTables.min.js"></script>

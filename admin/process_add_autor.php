@@ -12,11 +12,6 @@ if (isset($_POST['submit'])) {
     $nationality = $_POST['nationalite'] ?? null;
     $phone_number = $_POST['telephone'] ?? null;
     $photo = $_FILES['photo'] ?? null;
-
-    // Validation des champs obligatoires
-    if (!$first_name || !$last_name || !$email || !$nationality || !$phone_number) {
-        $erreur = "Tous les champs sont requis !";
-    } else {
         try {
             // Vérifier si l'email existe déjà
             $stmt = $connexion->prepare("SELECT id FROM authors WHERE email = ?");
@@ -67,5 +62,5 @@ if (isset($_POST['submit'])) {
             $erreur = "Erreur : " . $e->getMessage();
         }
     }
-}
+
 ?>

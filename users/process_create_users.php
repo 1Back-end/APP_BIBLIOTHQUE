@@ -1,7 +1,6 @@
 <?php
-include_once("../database/connexion.php"); 
+include_once("../database/connexion.php");
 
-$erreur_champ = "";
 $erreur = "";
 $success = "";
 
@@ -10,11 +9,10 @@ if (isset($_POST["submit"])) {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
     $confirm_password = trim($_POST["confirm_password"]);
+    $phone_number = trim($_POST["phone_number"]);
 
-    // Vérifier les champs vides
-    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
-        $erreur_champ = "Tous les champs doivent être remplis.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // Vérifier si l'email est valide
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erreur = "L'email est invalide.";
     } elseif ($password !== $confirm_password) {
         $erreur = "Les mots de passe ne correspondent pas.";
@@ -36,12 +34,13 @@ if (isset($_POST["submit"])) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Insérer l'utilisateur dans la base de données
-            $insertQuery = "INSERT INTO users (user_uuid, username, email, password) VALUES (:user_uuid, :username, :email, :password)";
+            $insertQuery = "INSERT INTO users (user_uuid, username, email, password, phone_number) VALUES (:user_uuid, :username, :email, :password,:phone_number)";
             $stmt = $connexion->prepare($insertQuery);
             $stmt->bindParam(":user_uuid", $user_uuid);
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":password", $hashed_password);
+            $stmt->bindParam(":phone_number", $phone_number);   
 
             if ($stmt->execute()) {
                 // Message de succès
