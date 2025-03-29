@@ -62,12 +62,12 @@
                                     <span class="badge bg-success py-2 ps-2 shadow-none text-white">Approuvé</span>
                                 <?php elseif ($emprunt['status'] == 'rejetté') : ?>
                                     <span class="badge bg-danger py-2 ps-2 shadow-none text-white">Rejetté</span>
-                                <?php elseif ($emprunt['status'] == 'terminé') : ?>
-                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">Terminé</span>
+                                <?php elseif ($emprunt['status'] == 'retournée') : ?>
+                                    <span class="badge bg-primary py-2 ps-2 shadow-none text-white">Retournée</span>
                                 <?php endif; ?>
                             </td>
                             <td class="d-flex align-items-center justify-content-between">
-                                <?php if ($emprunt['status'] != 'approuvé' && $emprunt['status'] != 'rejetté') : ?>
+                                <?php if ($emprunt['status'] != 'approuvé' && $emprunt['status'] != 'rejetté' && $emprunt['status'] != 'retournée') : ?>
                                     <a href="approve_emprunt.php?id=<?= $emprunt['id']?>" class="btn shadow-none btn-success py-2 px-2 btn-sm mx-2 rounded-0">
                                         <i class="fas fa-check-circle"></i> &nbsp; Approuver
                                     </a>

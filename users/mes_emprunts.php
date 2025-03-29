@@ -7,6 +7,16 @@
         </div>
     </div>
 
+    <div class="col-md-12 col-sm-12 mb-3 mb-3">
+    <?php if (!empty($_GET["message"])) : ?>
+    <?php $message = $_GET["message"]; ?>
+    <div class="alert alert-success text-center border-0" role="alert">
+        <?php echo htmlspecialchars($message); ?> !
+    </div>
+    <?php endif; ?>
+
+</div>
+
     <div class="col-md-12 col-sm-12 mb-3">
     <div class="card shadow-sm p-3 border-0">
         <div class="table-responsive">
@@ -50,15 +60,16 @@
                                     <span class="badge bg-success py-2 ps-2 shadow-none text-white">Approuvé</span>
                                 <?php elseif ($emprunt['status'] == 'rejetté') : ?>
                                     <span class="badge bg-danger py-2 ps-2 shadow-none text-white">Rejetté</span>
-                                <?php elseif ($emprunt['status'] == 'terminé') : ?>
-                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">Terminé</span>
+                                <?php elseif ($emprunt['status'] == 'retournée') : ?>
+                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">retournée</span>
                                 <?php endif; ?>
                             </td>
                             <td class="d-flex align-items-center justify-content-between">
-                                <a href="details_emprunt.php?id=<?= $emprunt['id']?>" class="btn shadow-none btn-info py-2 px-2 btn-sm mx-2 rounded-0">
+                                <?php if($emprunt['status'] == 'approuvé'): ?>
+                                <a href="return_emprunt.php?id=<?= $emprunt['id']?>" class="btn shadow-none btn-info py-2 px-2 btn-sm mx-2 rounded-0">
                                     <i class="fas fa-undo-alt"></i> &nbsp; Retournée
                                 </a>
-
+                                <?php endif; ?>
                                 <a href="details_emprunt.php?id=<?= $emprunt['id']?>" class="btn shadow-none btn-info py-2 px-2 btn-sm mx-2 rounded-0">
                                     <i class="fas fa-info-circle"></i> &nbsp; Détails
                                 </a>
