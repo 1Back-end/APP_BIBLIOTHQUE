@@ -6,7 +6,7 @@
         <div class="card shadow-none border-0 p-3">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="mr-auto">
-                    <h5 class="text-uppercase">Liste des utilisateurs (<?php echo $total_users;?>)</h5>
+                    <h5 class="text-uppercase">Liste des utilisateurs</h5>
                 </div>
                 <div class="ml-auto">
                     <a href="ajouter_utilisateur.php" class="btn btn-primary ps-2 py-2 shadow-none border-0 text-white text-uppercase">
@@ -31,6 +31,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-striped text-center" id="dataTable" width="100%" cellspacing="0">
                     <thead>
+                    <th>ID</th>
                     <th>Nom Complet</th>
                     <th>Adresse</th>
                     <th>Contact</th>
@@ -41,15 +42,16 @@
                     <tbody>
                         <?php foreach ($all_users as $index => $user):?>
                            <tr>
-                           <td class="text-nowrap" style="max-width: 200px; overflow: hidden;">
+                            <td><?php echo $user['admin_uuid'];?></td>
+                           <td class="text-nowrap" style="max-width: 205px; overflow: hidden;">
                                 <div class="d-flex align-items-center">
                                     <?php if (!empty($user['photo'])) : ?>
-                                    <img src="../uploads/<?= $user['photo'] ?>" class='rounded-circle img-fluid me-2' width='50' height='50' style='object-fit: cover; width: 50px; height: 50px; max-width: 50px; max-height: 50px;'>
+                                    <img src="../uploads/<?= $user['photo'] ?>" class='rounded-circle img-fluid me-2' width='40' height='40' style='object-fit: cover; width: 40px; height: 40px; max-width: 40px; max-height: 40px;'>
                                     <?php else : ?>
-                                                <img src="https://i.pinimg.com/564x/07/01/e5/0701e5a1cd4f91681f76cf3691176680.jpg" class='rounded-circle img-fluid me-2' width='50' height='50' style='object-fit: cover; width: 50px; height: 50px; max-width: 50px; max-height: 50px;'>
+                                        <img src="../uploads/profile.jpeg" class='rounded-circle img-fluid me-2' width='40' height='40' style='object-fit: cover; width: 40px; height: 40px; max-width: 40px; max-height: 40px;'>
                                     <?php endif; ?>
                                     <div class="ms-3">
-                                    <span class="mx-2 text-truncate" style="max-width: calc(100% - 50px);"><?= htmlspecialchars($user["email"]) ?></span>
+                                    <span class="mx-2 text-truncate" style="max-width: calc(100% - 50px);"><?= htmlspecialchars($user["username"]) ?></span>
                                 </div>
                                 </div>
                             </td>

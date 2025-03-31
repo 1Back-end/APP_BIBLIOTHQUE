@@ -47,8 +47,8 @@
     </div>
     <div class="row">
       <?php foreach ($all_categories as $category): ?>
-        <div class="col-md-4">
-          <div class="card mb-5 mb-md-0 h-100">
+        <div class="col-md-4 col-sm-12 mb-3">
+          <div class="card mb-5 mb-md-0 h-100  border-0">
             <div class="text-center mb-5">
               <span class="badge bg-black fw-normal text-uppercase bg-secondary">
                 <?= htmlspecialchars($category['name']); ?>

@@ -20,9 +20,6 @@ if (isset($_POST['submit'])) {
     $allowed_image_types = ['image/jpeg', 'image/png'];
     $photo = $_FILES['photo'] ?? null;
 
-    if (empty($username) || empty($email) || empty($phone_number) || empty($address)) {
-        $erreur_champ = "Tous les champs sont requis !";
-    } else {
         // Check if email already exists
         $sqlCheck = "SELECT COUNT(*) FROM admin_users WHERE email = :email";
         $stmt = $connexion->prepare($sqlCheck);
@@ -66,6 +63,5 @@ if (isset($_POST['submit'])) {
             }
         }
     }
-}
 ob_end_flush(); // Send the output at the end
 ?>

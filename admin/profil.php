@@ -76,7 +76,7 @@
                         <input type="text" class="form-control shadow-none" id="phone_number" name="phone_number" value="<?php echo htmlspecialchars($admin_info['phone_number']); ?>">
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" name="submit" class="btn btn-primary shadow-none btn-responsive text-white">Enregistrer les modifications</button>
+                        <button type="submit" name="submit" class="btn btn-primary shadow-none btn-responsive text-white ps-2 py-3">Enregistrer les modifications</button>
                     </div>
                 </div>
             </div>

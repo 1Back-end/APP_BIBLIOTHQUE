@@ -41,7 +41,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="###">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -59,6 +59,7 @@
                 </a>
             </li>
 
+
             <!-- Nav Item - Catégories -->
             <li class="nav-item">
                 <a class="nav-link" href="mes_emprunts.php">
@@ -66,6 +67,22 @@
                     <span>Mes emprunts</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="mon_compte.php">
+                    <i class="fas fa-user"></i>
+                    <span>Mon compte</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Retour au site</span>
+                </a>
+            </li>
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -143,11 +160,6 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item text-decoration-none" href="profil.php">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a  href="logout.php" class="dropdown-item text-decoration-none">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Déconnexion

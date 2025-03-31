@@ -1,4 +1,5 @@
 <?php include("../include/menu.php"); ?>
+<link rel="stylesheet" href="style.css">
 
 <div class="container-fluid pb-5">
     <div class="col-md-12 col-sm-12 mb-3">
@@ -26,7 +27,7 @@
         <div class="card shadow-sm p-3 border-0">
             <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 mb-3">
+                    <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="mb-3">
                             <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
                             <input type="text" required class="form-control form-control-lg" id="nom" name="nom">
@@ -49,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-12 mb-3">
+                    <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="mb-3">
                             <label for="prenom" class="form-label">Prénom <span class="text-danger">*</span></label>
                             <input type="text"  class="form-control ps-2 py-3 form-control-lg" required id="prenom" name="prenom">
@@ -58,8 +59,8 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="">Numéro de téléphone <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control ps-2 py-3 form-control-lg" required id="telephone" name="telephone">
+                            <label for="">Numéro de téléphone <span class="text-danger">*</span></label><br>
+                            <input type="tel" class="form-control ps-2 py-3 form-control-lg" required id="phone" name="telephone">
                             <div class="invalid-feedback">
                                 Ce champ est requis !
                             </div>
@@ -79,3 +80,8 @@
         </div>
     </div>
 </div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+<script src="script.js"></script>

@@ -19,34 +19,34 @@
 </div>
     <div class="col-md-12 col-sm-12 mb-3">
         <div class="card shadow-sm border-0 p-3">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="">Nom Complet <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control shadow-none" name="username" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '') ?>">
-                    <?php if (isset($erreur_champ) && empty($_POST['username'])): ?>
-                            <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                    <?php endif; ?>
+                    <input type="text" class="form-control form-control-lg" required name="username" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '') ?>">
+                    <div class="invalid-feedback">
+                            Ce champ est requis !
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control shadow-none" name="email" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '') ?>">
-                    <?php if (isset($erreur_champ) && empty($_POST['email'])): ?>
-                            <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                    <?php endif; ?>
+                    <input type="email" class="form-control form-control-lg"  required name="email" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '') ?>">
+                    <div class="invalid-feedback">
+                            Ce champ est requis !
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="">Adresse <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control shadow-none" name="address" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['address']) ? htmlspecialchars($_POST['address']) : '') ?>">
-                    <?php if (isset($erreur_champ) && empty($_POST['address'])): ?>
-                            <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                    <?php endif; ?>
+                    <input type="text" class="form-control form-control-lg" required name="address" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['address']) ? htmlspecialchars($_POST['address']) : '') ?>">
+                    <div class="invalid-feedback">
+                            Ce champ est requis !
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="">Numéro de téléphone <span class="text-danger">*</span></label>
-                    <input type="tel" class="form-control shadow-none" name="phone_number" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['phone_number']) ? htmlspecialchars($_POST['phone_number']) : '') ?>">
-                    <?php if (isset($erreur_champ) && empty($_POST['phone_number'])): ?>
-                            <small class="text-danger"><?= htmlspecialchars($erreur_champ) ?></small>
-                    <?php endif; ?>
+                    <input type="tel" class="form-control form-control-lg" required name="phone_number" value="<?= (empty($erreur) && !empty($success)) ? '' : (isset($_POST['phone_number']) ? htmlspecialchars($_POST['phone_number']) : '') ?>">
+                    <div class="invalid-feedback">
+                            Ce champ est requis !
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="">Photo de profil</label>
@@ -54,10 +54,10 @@
                 </div>
                 <div class="mb-3">
                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between mb-2">
-                            <button name="submit" class="btn btn-customize text-white  border-0 btn-primary py-2 ps-3 shadow-none mb-3 mx-2">
+                            <button name="submit" class="btn btn-customize text-white  border-0 btn-primary py-3 ps-3 shadow-none mb-3 mx-2">
                                 Enregistrer
                             </button>
-                            <a href="utilisateurs.php" class="btn btn-secondary border-0 btn-secondary py-2 ps-3 shadow-none mb-3">Retour à la liste des utilisateurs</a>
+                            <a href="utilisateurs.php" class="btn btn-secondary border-0 btn-secondary py-3 ps-3 shadow-none mb-3">Retour à la liste des utilisateurs</a>
                     </div>
                 </div>
             </form>

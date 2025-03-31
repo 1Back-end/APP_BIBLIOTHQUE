@@ -10,6 +10,7 @@ if (isset($_POST["submit"])) {
     $password = trim($_POST["password"]);
     $confirm_password = trim($_POST["confirm_password"]);
     $phone_number = trim($_POST["phone_number"]);
+    $address = trim($_POST["address"]);
 
     // Vérifier si l'email est valide
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -34,13 +35,14 @@ if (isset($_POST["submit"])) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Insérer l'utilisateur dans la base de données
-            $insertQuery = "INSERT INTO users (user_uuid, username, email, password, phone_number) VALUES (:user_uuid, :username, :email, :password,:phone_number)";
+            $insertQuery = "INSERT INTO users (user_uuid, username, email, password, phone_number,address) VALUES (:user_uuid, :username, :email, :password,:phone_number,:address)";
             $stmt = $connexion->prepare($insertQuery);
             $stmt->bindParam(":user_uuid", $user_uuid);
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":email", $email);
             $stmt->bindParam(":password", $hashed_password);
-            $stmt->bindParam(":phone_number", $phone_number);   
+            $stmt->bindParam(":phone_number", $phone_number);
+            $stmt->bindParam(":address", $address);   
 
             if ($stmt->execute()) {
                 // Message de succès

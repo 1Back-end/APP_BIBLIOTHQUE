@@ -112,6 +112,15 @@
 										Ce champ est requis !
 									</div>
 								</div>
+
+
+                                <div class="mb-3">
+									<label class="mb-2" for="phone">Adresse <span class="text-danger">*</span></label>
+									<input type="text" class="form-control form-control-lg" id="address" required name="address">
+									<div class="invalid-feedback">
+										Ce champ est requis !
+									</div>
+								</div>
 								<div class="mb-3">
 									<label class="mb-2" for="password">Mot de passe <span class="text-danger">*</span></label>
 									<input id="password" type="password" class="form-control  form-control-lg" required name="password">

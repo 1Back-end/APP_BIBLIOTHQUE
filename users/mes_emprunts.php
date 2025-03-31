@@ -61,7 +61,7 @@
                                 <?php elseif ($emprunt['status'] == 'rejetté') : ?>
                                     <span class="badge bg-danger py-2 ps-2 shadow-none text-white">Rejetté</span>
                                 <?php elseif ($emprunt['status'] == 'retournée') : ?>
-                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">retournée</span>
+                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">Retournée</span>
                                 <?php endif; ?>
                             </td>
                             <td class="d-flex align-items-center justify-content-between">

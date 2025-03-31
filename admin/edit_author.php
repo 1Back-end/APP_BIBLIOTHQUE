@@ -38,7 +38,7 @@ if (isset($_GET["id"])) {
     <div class="card shadow-sm p-3 border-0">
         <form class="needs-validation" novalidate action="" method="post" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-6 col-sm-12 mb-3">
+                <div class="col-lg-6 col-sm-12 mb-3">
                 <div class="mb-3">
                         <label for="nom" class="form-label">Nom <span class="text-danger">*</span></label>
                         <input type="text" value="<?php echo htmlspecialchars($autor->last_name ?? ''); ?>" 
@@ -66,7 +66,7 @@ if (isset($_GET["id"])) {
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-12 mb-3">
+                <div class="col-lg-6 col-sm-12 mb-3">
                 <div class="mb-3">
                         <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                         <input type="email" value="<?php echo htmlspecialchars($autor->email ?? ''); ?>" 

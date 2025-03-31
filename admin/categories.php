@@ -4,7 +4,7 @@
 <div class="main-container mt-3 pb-5">
     <div class="col-md-12 col-sm-12 mb-3">
         <div class="row">
-            <div class="col-md-6 col-sm-12 mb-3">
+            <div class="col-lg-6 col-sm-12 mb-3">
                 <div class="card shadow-sm border-0 p-3">
                     <form action="" class="needs-validation" novalidate method="post">
                         <div class="mb-3">
@@ -35,7 +35,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6  col-sm-12 mb-3">
+            <div class="col-lg-6 col-sm-12 mb-3">
                 <div class="card shadow-sm border-0 p-3">
                     <h6 class="text-uppercase fw-bold mb-3">Liste des catégories</h6>
                     <div class="mb-3">

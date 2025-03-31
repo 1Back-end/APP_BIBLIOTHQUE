@@ -64,6 +64,22 @@ function get_all_emprunts($connexion) {
 
 $emprunts = get_all_emprunts($connexion);
 
+
+
+function get_all_retours($connexion) {
+    $query = "SELECT e.id, b.titre AS livre, u.username AS utilisateur, b.photo AS photo_livre, e.date_emprunt, e.date_retour_estimee, e.date_retour_reel, e.status 
+              FROM emprunts e
+              JOIN book b ON e.book_id = b.id
+              JOIN users u ON e.user_id = u.user_uuid
+              WHERE e.status = 'retournée'
+              ORDER BY e.date_emprunt DESC";
+
+    $stmt = $connexion->query($query);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$retours = get_all_retours($connexion);
+
 function get_info_users($connexion, $uuid_admin){
     global $_SESSION; // Déclare $_SESSION comme globale
     $query = "SELECT * FROM admin_users WHERE admin_uuid = :admin_uuid";
@@ -88,18 +104,26 @@ function get_count_books($connexion){
 $count_books = get_count_books($connexion);
 
 function get_count_admin($connexion){
-    $query="SELECT COUNT(*) as total FROM admin_users WHERE is_deleted =0";
+    $query="SELECT COUNT(*) as total FROM admin_users WHERE is_deleted = 0";
     $stmt = $connexion->prepare($query);
     $stmt->execute();
     return $stmt->fetchColumn();
 }
 $total_users = get_count_admin($connexion);
 
+function get_count_retours($connexion){
+    $query = "SELECT COUNT(*) FROM emprunts WHERE status ='retournée'";
+    $stmt = $connexion->query($query);
+    return $stmt->fetchColumn();
+}
+$count_retours = get_count_retours($connexion);
+
 function get_count_emprunts($connexion){
     $query = "SELECT COUNT(*) FROM emprunts";
     $stmt = $connexion->query($query);
     return $stmt->fetchColumn();
 }
+$count_emprunts = get_count_emprunts($connexion);
 function generatePassword($length = 12) {
     // Définir les caractères utilisés dans le mot de passe
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=';
@@ -122,10 +146,9 @@ function get_all_users($connexion){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 }
-
 $all_users = get_all_users($connexion);
 
-$count_emprunts = get_count_emprunts($connexion);
+
 
 function get_counts_categories($connexion){
     $query = "SELECT COUNT(*) FROM categories";

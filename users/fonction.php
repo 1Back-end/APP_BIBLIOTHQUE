@@ -22,4 +22,16 @@ function get_user_emprunts($connexion, $user_id) {
 }
 
 $emprunts = get_user_emprunts($connexion, $user_id);
+
+
+
+function get_info_users($connexion,$user_id){
+    $query = "SELECT * FROM users WHERE user_uuid  = :user_id";
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+$user_info = get_info_users($connexion, $user_id);
+
 ?>

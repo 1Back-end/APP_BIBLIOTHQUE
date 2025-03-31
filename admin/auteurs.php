@@ -47,11 +47,11 @@
                             <td><?= $index + 1 ?></td>
                             <td>
                                 <?php if (empty($author['photo'])): ?>
-                                    <img src="../uploads/autor.png" alt="Aucune photo" width="50" height="50" class="rounded-circle">
+                                    <img src="../uploads/profile.jpeg" alt="Aucune photo" class='rounded-circle img-fluid me-2' width='40' height='40' style='object-fit: cover; width: 40px; height: 40px; max-width: 40px; max-height: 40px;'>
                                 <?php else: ?>
                                     <img src="../uploads/<?= htmlspecialchars($author['photo']) ?>" 
                                         alt="Photo de <?= htmlspecialchars($author['first_name'] . ' ' . $author['last_name']) ?>" 
-                                        width="50" height="50" class="rounded-circle">
+                                        class='rounded-circle img-fluid me-2' width='40' height='40' style='object-fit: cover; width: 40px; height: 40px; max-width: 40px; max-height: 40px;'>
                                 <?php endif; ?>
                             </td>
                             <td><?= htmlspecialchars($author['first_name'] . ' ' . $author['last_name']) ?></td>
