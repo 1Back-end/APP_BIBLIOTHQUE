@@ -1,7 +1,7 @@
 <?php
 // Paramètres de connexion
 $host = 'localhost';
-$dbname = 'app_lib_system';
+$dbname = 'app_lib_system_management';
 $username = 'root';
 $password = '';
 
