@@ -57,13 +57,13 @@
 
                             <td>
                                 <?php if ($emprunt['status'] == 'en cours') : ?>
-                                    <span class="badge bg-warning py-2 ps-2 shadow-none text-white">En cours</span>
+                                    <span class="badge bg-warning py-2 ps-2 shadow-none border-0 rounded-0 text-white">En cours</span>
                                 <?php elseif ($emprunt['status'] == 'approuvé') : ?>
-                                    <span class="badge bg-success py-2 ps-2 shadow-none text-white">Approuvé</span>
+                                    <span class="badge bg-success py-2 ps-2 shadow-none border-0 rounded-0 text-white">Approuvé</span>
                                 <?php elseif ($emprunt['status'] == 'rejetté') : ?>
-                                    <span class="badge bg-danger py-2 ps-2 shadow-none text-white">Rejetté</span>
+                                    <span class="badge bg-danger py-2 ps-2 shadow-none border-0 rounded-0 text-white">Rejetté</span>
                                 <?php elseif ($emprunt['status'] == 'retournée') : ?>
-                                    <span class="badge bg-primary py-2 ps-2 shadow-none text-white">Retournée</span>
+                                    <span class="badge bg-primary py-2 ps-2 shadow-none border-0 rounded-0 text-white">Retournée</span>
                                 <?php endif; ?>
                             </td>
                             <td class="d-flex align-items-center justify-content-between">

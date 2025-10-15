@@ -170,7 +170,7 @@
 
 
 <script>
- const phoneInput = document.querySelector("#phone");
+const phoneInput = document.querySelector("#phone");
 const errorMessage = document.querySelector(".invalid-feedback");
 
 // Initialisation avec détection automatique du pays

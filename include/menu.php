@@ -25,7 +25,7 @@
     <!-- Custom styles for this template-->
     <link href="../assets-vendors/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="../assets-vendors/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
@@ -224,11 +224,11 @@
     <script src="../assets-vendors/js/main.js"></script>
 
      <!-- Page level plugins -->
-     <script src="../assets-vendors/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../assets-vendors/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../assets-vendors/js/demo/datatables-demo.js"></script>
+    <script src="../assets/js/demo/datatables-demo.js"></script>
 
 </body>
 
